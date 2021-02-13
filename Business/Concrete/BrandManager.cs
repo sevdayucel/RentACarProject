@@ -1,7 +1,11 @@
-﻿using DataAccess.Abstract;
+﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Business.Concrete
@@ -9,49 +13,26 @@ namespace Business.Concrete
     public class BrandManager:IBrandService
     {
         IBrandDal _brandDal;
-
         public BrandManager(IBrandDal brandDal)
         {
             _brandDal = brandDal;
         }
 
-        public void Add(Brand brand)
+        public IResult Add(Brand brand)
         {
-            if (brand.BrandName.Length > 2)
-            {
-                _brandDal.Add(brand);
-                Console.WriteLine("Marka bilgisi eklendi.");
-            }
-            else
-            {
-                Console.WriteLine("En az 2 karakter giriniz : {brand.BrandName}");
-            }
+            
+            return new SuccessResult(Messages.BrandAdded);
         }
 
-        public void Delete(Brand brand)
+        public IResult Delete(Brand brand)
         {
-            _brandDal.Delete(brand);
-            Console.WriteLine("Marka bilgisi silindi.");
-
+            return new SuccessResult(Messages.BrandDeleted);
         }
 
-        public List<Brand> GetAll()
-        {
-            return _brandDal.GetAll();
-        }
 
-        public void Update(Brand brand)
+        public IResult Update(Brand brand)
         {
-            if (brand.BrandName.Length >= 2)
-            {
-                _brandDal.Update(brand);
-                Console.WriteLine("Marka bilgisi Güncellendi.");
-            }
-            else
-            {
-                Console.WriteLine("En az 2 karakter giriniz:{brand.BrandName}");
-            }
-
+            return new SuccessResult(Messages.BrandModified);
         }
     }
 }

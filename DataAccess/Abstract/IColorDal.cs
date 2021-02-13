@@ -3,14 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Core.DataAccess;
+using System.Linq.Expressions;
 
 namespace DataAccess.Abstract
 {
-    public class IColorDal : IEntityRepository<Color>
+    public interface IColorDal : IEntityRepository<Color>
     {
-        public List<Color> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        
+        
     }
 }

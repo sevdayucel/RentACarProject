@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using Core.Utilities.Results;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -6,12 +7,9 @@ using System.Text;
 
 namespace Business.Abstract
 {
-    public class IColorService
+    public interface IColorService
     {
-        List<Color> GetAll();
-        Color GetByColorId(int colorId);
-        void Add(Color color);
-        void Update(Color color);
-        void Delete(Color color);
+        IDataResult<Color> GetByColorId(int colorId);
+        
     }
 }
