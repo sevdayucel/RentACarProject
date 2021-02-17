@@ -1,9 +1,10 @@
-﻿using Business.Abstract;
+﻿using System;
+using System.Collections.Generic;
+using Business.Abstract;
 using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using System.Collections.Generic;
 
 namespace Business.Concrete
 {
@@ -20,6 +21,10 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CustomerAdded);
         }
 
-        
+        public IDataResult<List<Customer>> GetAll()
+        {
+
+            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.CustomerListed);
+        }
     }
 }

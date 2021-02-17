@@ -1,10 +1,10 @@
-﻿using Business.Abstract;
+﻿using System;
+using System.Collections.Generic;
+using Business.Abstract;
 using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
-using System.Collections.Generic;
 
 namespace Business.Concrete
 {
@@ -24,7 +24,10 @@ namespace Business.Concrete
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.RentalAdd);
         }
+        public IDataResult<List<Rental>> GetAll()
+        {
+            return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(), Messages.RentalListed);
+        }
 
-        
     }
 }

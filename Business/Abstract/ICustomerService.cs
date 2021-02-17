@@ -10,6 +10,7 @@ namespace Business.Abstract
     public interface ICustomerService
     {
         IResult Add(Customer customers);
-        
+        IDataResult<List<Customer>> GetAll();
+
     }
 }

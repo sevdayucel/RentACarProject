@@ -11,6 +11,7 @@ namespace Business.Abstract
     {
         
         IResult Add(User users);
-        
+        IDataResult<List<User>> GetAll();
+
     }
 }

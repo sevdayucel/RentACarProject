@@ -21,14 +21,13 @@ namespace Business.Concrete
 
         public IResult Add(Car car)
         {
-            if (car.CarName.Length>2)
+            if (car.DailyPrice < 0)
             {
-                return new SuccessResult(Messages.CarAdded);
+                Console.WriteLine("Enter the daily price of the car at a greater value than zero.");
+                return new ErrorResult();
             }
-            else
-            {
-                Console.WriteLine("Lütfen geçerli bir araç adı giriniz");
-            }
+            _carDal.Add(car);
+            return new SuccessResult(Messages.CarAdded);
         }
 
         public IResult Delete(Car car)

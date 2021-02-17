@@ -25,8 +25,12 @@ namespace Business.Concrete
             return new SuccessResult(Messages.UserAdd);
 
         }
+        public IDataResult<List<User>> GetAll()
+        {
 
-        
+            return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.UserListed);
+        }
+
 
     }
 }

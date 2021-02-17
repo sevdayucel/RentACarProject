@@ -8,18 +8,24 @@ namespace Business.Constants
     {
         public static string CarAdded = "Araba eklendi";
         public static string BrandAdded = "Marka bilgisi eklendi";
-        
+        public static string ColorAdded = "Araç renk bilgisi eklendi";
         public static string CarAddInvalid = "Gecersiz deger.Araba eklenemedi!";
         public static string BrandNameInvalid = "Marka adı gecersiz";
         public static string MaintenanceTime = "Sistem bakimda";
         public static string CarListed = "Arabalar listelendi";
+        public static string UserListed = "Kullanıcılar listelendi";
+        public static string ColorListed = "Renk bilgisi listelendi";
+        public static string RentalListed = "Kiralık araç bilgisi listelendi";
+        public static string BrandListed = "Marka bilgisi listelendi";
         public static string CarDeleted = "Araba bilgileri silindi";
+        public static string ColorDeleted = "Araç renk  bilgisi silindi";
         public static string BrandDeleted = "Marka bilgileri silindi";
         public static string CarUpdated = "Araba bilgileri güncellendi";
         public static string BrandModified= "Marka bilgileri güncellendi";
         public static string CustomerAdded = "Müşteri bilgileri eklendi";
         public static string CustomerDelete = "Müşteri bilgileri silindi";
         public static string CustomerUpdate = "Müşteri bilgileri güncellendi";
+        public static string CustomerListed = "Müşteri bilgileri listelendi";
         public static string RentalNotAdd = "Kiralama işlemi eklenemedi.Müşteri bilgilerini eklediğinizden emin olunuz!";
         public static string RentalAdd = "Kiralama blgileri eklendi.";
         public static string RentalDelete = "Kiralama blgileri silindi.";

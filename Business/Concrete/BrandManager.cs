@@ -34,5 +34,10 @@ namespace Business.Concrete
         {
             return new SuccessResult(Messages.BrandModified);
         }
+        public IDataResult<List<Brand>> GetAll()
+        {
+
+            return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(), Messages.BrandListed);
+        }
     }
 }
